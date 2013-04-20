@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureUtils", "PictureUtil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiOTTDAL", "PiOTTDAL\PiOTTDAL.csproj", "{96880053-B77E-4366-AA13-4CA9CABCC52E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioTTTests", "PioTTTests\PioTTTests.csproj", "{C6A2A61C-1AA6-4B6E-BF54-0985AC657B1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{96880053-B77E-4366-AA13-4CA9CABCC52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96880053-B77E-4366-AA13-4CA9CABCC52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96880053-B77E-4366-AA13-4CA9CABCC52E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A2A61C-1AA6-4B6E-BF54-0985AC657B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A2A61C-1AA6-4B6E-BF54-0985AC657B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A2A61C-1AA6-4B6E-BF54-0985AC657B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A2A61C-1AA6-4B6E-BF54-0985AC657B1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
