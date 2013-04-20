@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace PiOTTCommon.CustomExceptions
 {
-    public class DALException : Exception
+    public class ImageSizeMismatchException : Exception
     {
-        public DALException()
-            : base("Record not found.")
+        public ImageSizeMismatchException()
+            : base("Image size mismatch.")
         {
         }
 
-        public DALException(string message)
+        public ImageSizeMismatchException(string message)
             : base(message)
         {
         }
 
-        public DALException(string message, Exception innerException)
+        public ImageSizeMismatchException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
