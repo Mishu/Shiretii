@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RaspberryCam">
-      <HintPath>..\packages\RaspberryCam.1.0.0.0\lib\net40\RaspberryCam.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -44,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageComparer.cs" />
+    <Compile Include="ParralelImageComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

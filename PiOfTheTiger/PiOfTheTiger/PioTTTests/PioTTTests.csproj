@@ -55,7 +55,6 @@
     <Compile Include="PiOTTDAL\AddressBookQueryTest.cs" />
     <Compile Include="PiOTTDAL\EmailSettingsQueryTest.cs" />
     <Compile Include="PictureUtils\ImageComparerTest.cs" />
-    <Compile Include="PiOTTDAL\QueryRunnerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
