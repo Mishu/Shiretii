@@ -2,5 +2,13 @@ extends layout
 
 block content
     h1 Please login to access the application
-    form
+    form.form-horizontal(method="post", action="/login")
+        .control-group            
+            label.control-label(for="username") Username
+            input.controls(name="username")
+        .control-group
+            label.control-label(for="password") Password
+            input.controls(type="password", name="password")
+        .control-group
+            input.btn(type="submit", name="login", text="Login") Login
         
