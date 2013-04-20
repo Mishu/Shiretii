@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaptureImage\CaptureImage.cs" />
+    <Compile Include="CaptureImages\CaptureImage.cs" />
+    <Compile Include="ContinuousCapturing\ContinuousCapture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

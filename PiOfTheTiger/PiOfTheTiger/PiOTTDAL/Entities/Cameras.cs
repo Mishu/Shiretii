@@ -13,5 +13,7 @@ namespace PiOTTDAL.Entities
         [Name]
         public string CameraName { get; set; }
         public string Path { get; set; }
+        public int PictureHeight { get; set; }
+        public int PictureWidth { get; set; }
     }
 }

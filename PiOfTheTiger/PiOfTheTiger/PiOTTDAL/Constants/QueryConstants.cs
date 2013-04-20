@@ -17,5 +17,12 @@ namespace PiOTTDAL.Constants
         public const string AppSettingsKey_SMTPUseSSL   = "SMTPUseSSL";
 
         #endregion
+
+        #region Pictures
+
+        public const string AppSettingsKey_PicturesSavePath = "PicturesSavePath";
+        public const string AppSettingsKey_PicturesSaveInterval = "PicturesSaveInterval";
+
+        #endregion
     }
 }

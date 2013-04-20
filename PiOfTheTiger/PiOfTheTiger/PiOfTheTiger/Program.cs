@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiOTTWebCam.ContinuousCapturing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace PiOfTheTiger
     {
         static void Main(string[] args)
         {
+            ContinuousCapture capturing = new ContinuousCapture();
+            capturing.StartCapturing();
         }
     }
 }
