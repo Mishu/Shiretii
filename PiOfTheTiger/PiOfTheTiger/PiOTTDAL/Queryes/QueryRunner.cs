@@ -67,11 +67,16 @@ namespace PiOTTDAL.Queryes
             return Execute<T>(query);
         }
 
-        public List<T> GetByName<T>(string name)
+        public List<T> GetByAttribute<T>(string name, Type attributeType)
         {
-            PropertyInfo property = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(Name))).FirstOrDefault();
+            string typeName = typeof(T).Name;
 
-            string query = String.Format("select * from {0} where {1} = '{2}'", typeof(T).Name, property.Name, name);
+            PropertyInfo property = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, attributeType)).FirstOrDefault();
+
+            if (property == null)
+                throw new Exception(String.Format("Attribute {0} not found on entity {1}", attributeType.Name, typeName));
+
+            string query = String.Format("select * from {0} where {1} = '{2}'", typeName, property.Name, name);
 
             return Execute<T>(query);
         }

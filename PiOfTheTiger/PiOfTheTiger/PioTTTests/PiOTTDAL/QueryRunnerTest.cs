@@ -30,10 +30,10 @@ namespace PioTTTests.PiOTTDAL
         }
 
         [TestMethod]
-        public void TestGetByName()
+        public void TestGetByAttribute()
         {
             QueryRunner runner = new QueryRunner();
-            List<AddressBook> addresses = runner.GetByName<AddressBook>("");
+            List<AddressBook> addresses = runner.GetByAttribute<AddressBook>("", typeof(Name));
 
             Assert.AreEqual(3, addresses.Count);
         }
