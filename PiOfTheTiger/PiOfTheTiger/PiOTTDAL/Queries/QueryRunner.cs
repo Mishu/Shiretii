@@ -36,7 +36,6 @@ namespace PiOTTDAL.Queryes
                 {
                     while (reader.Read())
                     {
-                        List<Int32> columnsIndexes = new List<int>();
                         instance = (T)Activator.CreateInstance(typeof(T));
                         foreach (PropertyInfo property in columns)
                         {
