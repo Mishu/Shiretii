@@ -30,6 +30,16 @@ namespace PioTTTests.EmailUtils
             return mailMessage;
         }
 
+        private MailMessage MailMessageMockWithAttachment()
+        {
+            MailMessage mailMessage = MailMessageMock();
+
+            Attachment attachment = new Attachment(@"D:\Dropbox\Dropbox\Hackathon\Wallpaper.png");
+            mailMessage.Attachments.Add(attachment);
+
+            return mailMessage;
+        }
+
         private EmailSettings EmailSettingsMock()
         {
             EmailSettings emailSettings = new EmailSettings()
@@ -52,6 +62,16 @@ namespace PioTTTests.EmailUtils
             EmailSender emailSender = new EmailSender(emailSettings);
 
             MailMessage mailMessage = MailMessageMock();
+            emailSender.SendTheMail(mailMessage);
+        }
+
+        [TestMethod]
+        public void SendTheMailTestWithAttachment()
+        {
+            EmailSettings emailSettings = EmailSettingsMock();
+            EmailSender emailSender = new EmailSender(emailSettings);
+
+            MailMessage mailMessage = MailMessageMockWithAttachment();
             emailSender.SendTheMail(mailMessage);
         }
     }
