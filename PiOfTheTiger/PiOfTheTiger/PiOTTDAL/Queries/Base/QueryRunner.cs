@@ -7,8 +7,9 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Reflection;
 using PiOTTDAL.Entities;
+using PiOTTCommon.CustomExceptions;
 
-namespace PiOTTDAL.Queryes
+namespace PiOTTDAL.Queries.Base
 {
     public class QueryRunner
     {
@@ -29,7 +30,7 @@ namespace PiOTTDAL.Queryes
         /// objects of the specified type, that are retrieved from
         /// the database, using the given query.
         /// </summary>
-        public List<T> Execute<T>(string query)
+        private List<T> Execute<T>(string query)
         {
             List<T> result = new List<T>();
             T instance = (T)Activator.CreateInstance(typeof(T));
@@ -72,7 +73,7 @@ namespace PiOTTDAL.Queryes
         /// all the objects of the specified type, found
         /// in the database
         /// </summary>
-        public List<T> GetAll<T>()
+        protected List<T> GetAll<T>()
         {
             string query = String.Format("select * from {0}",typeof(T).Name);
 
@@ -85,7 +86,7 @@ namespace PiOTTDAL.Queryes
         /// in the database, filtered by the column that
         /// has the specified attribute.
         /// </summary>
-        public List<T> GetByAttribute<T>(string name, Type attributeType)
+        protected T GetByAttribute<T>(string name, Type attributeType)
         {
             string typeName = typeof(T).Name;
 
@@ -94,9 +95,14 @@ namespace PiOTTDAL.Queryes
             if (property == null)
                 throw new Exception(String.Format("Attribute {0} not found on entity {1}", attributeType.Name, typeName));
 
-            string query = String.Format("select * from {0} where {1} = '{2}'", typeName, property.Name, name);
+            string query = String.Format("select * from `{0}` where `{1}` = '{2}'", typeName, property.Name, name);
 
-            return Execute<T>(query);
+            List<T> results = Execute<T>(query);
+
+            if (results.Count == 0)
+                throw new DALException(String.Format("No result with value {0} was found in table {1}", name, typeName));
+
+            return Execute<T>(query).FirstOrDefault();
         }
     }
 }

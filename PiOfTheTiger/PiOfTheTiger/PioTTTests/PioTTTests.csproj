@@ -51,7 +51,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="EmailUtils\EmailSenderTest.cs" />
-    <Compile Include="PiOTTDAL\QueryRunnerTest.cs" />
+    <Compile Include="PiOTTDAL\AddressBookQueryTest.cs" />
+    <Compile Include="PiOTTDAL\EmailSettingsQueryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

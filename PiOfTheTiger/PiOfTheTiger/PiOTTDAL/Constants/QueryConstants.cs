@@ -9,7 +9,7 @@ namespace PiOTTDAL.Constants
     public class QueryConstants
     {
         #region SMTP
-        
+
         public const string AppSettingsKey_SMTPServer   = "SMTPServer";
         public const string AppSettingsKey_SMTPUserName = "SMTPUserName";
         public const string AppSettingsKey_SMTPPassword = "SMTPPassword";
