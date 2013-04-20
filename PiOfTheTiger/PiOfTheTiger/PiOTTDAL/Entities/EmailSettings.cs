@@ -14,6 +14,7 @@ namespace PiOTTDAL.Entities
         public String SMTPServer { get; set; }
         public String SMTPUserName { get; set; }
         public String SMTPPassword { get; set; }
-        public String SMTPSslRequired { get; set; }
+        public Boolean SMTPSslRequired { get; set; }
+        public int SMTPPort { get; set; }
     }
 }
