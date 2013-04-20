@@ -33,9 +33,9 @@ namespace PioTTTests.PiOTTDAL
         public void TestGetByAttribute()
         {
             QueryRunner runner = new QueryRunner();
-            List<AddressBook> addresses = runner.GetByAttribute<AddressBook>("", typeof(Name));
+            List<AddressBook> addresses = runner.GetByAttribute<AddressBook>("Robert", typeof(Name));
 
-            Assert.AreEqual(3, addresses.Count);
+            Assert.AreEqual(1, addresses.Count);
         }
     }
 }
