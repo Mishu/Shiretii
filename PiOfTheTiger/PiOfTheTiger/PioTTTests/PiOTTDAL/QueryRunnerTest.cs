@@ -19,5 +19,23 @@ namespace PioTTTests.PiOTTDAL
 
             Assert.AreEqual(3, addresses.Count);
         }
+
+        [TestMethod]
+        public void TestGetAllScript()
+        {
+            QueryRunner runner = new QueryRunner();
+            List<AddressBook> addresses = runner.GetAll<AddressBook>();
+
+            Assert.AreEqual(3, addresses.Count);
+        }
+
+        [TestMethod]
+        public void TestGetByName()
+        {
+            QueryRunner runner = new QueryRunner();
+            List<AddressBook> addresses = runner.GetByName<AddressBook>("");
+
+            Assert.AreEqual(3, addresses.Count);
+        }
     }
 }

@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\QueryConstants.cs" />
     <Compile Include="Entities\AddressBook.cs" />
+    <Compile Include="Entities\AppSettings.cs" />
     <Compile Include="Entities\EmailSettings.cs" />
+    <Compile Include="Entities\Name.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queryes\QueryRunner.cs" />
   </ItemGroup>

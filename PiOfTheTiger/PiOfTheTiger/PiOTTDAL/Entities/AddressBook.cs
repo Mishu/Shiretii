@@ -18,6 +18,8 @@ namespace PiOTTDAL.Entities
         
         public int IdAddressBook { get; set; }
         public string EmailAddress { get; set; }
+
+        [Name]
         public string AddressName { get; set; }
     }
 }

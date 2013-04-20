@@ -44,7 +44,6 @@ namespace PioTTTests.EmailUtils
         {
             EmailSettings emailSettings = new EmailSettings()
             {
-                EmailSettingsName = "PiOTT",
                 SMTPPassword = "1234%asd",
                 SMTPPort = 587,
                 SMTPServer = "smtp.gmail.com",

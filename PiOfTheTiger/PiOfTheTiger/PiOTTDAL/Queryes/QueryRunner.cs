@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Reflection;
+using PiOTTDAL.Entities;
 
 namespace PiOTTDAL.Queryes
 {
@@ -26,25 +27,53 @@ namespace PiOTTDAL.Queryes
             T instance = (T)Activator.CreateInstance(typeof(T));
             List<PropertyInfo> columns = instance.GetType().GetProperties().ToList();
 
-            connection.Open();
-
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                List<Int32> columnsIndexes = new List<int>();
-                instance = (T)Activator.CreateInstance(typeof(T));
-                foreach (PropertyInfo property in columns)
-                {
-                    int index = reader.GetOrdinal(property.Name);
-                    property.SetValue(instance, reader.GetValue(index));
-                }
+                connection.Open();
 
-                result.Add(instance);
+                MySqlCommand command = new MySqlCommand(query, connection);
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        List<Int32> columnsIndexes = new List<int>();
+                        instance = (T)Activator.CreateInstance(typeof(T));
+                        foreach (PropertyInfo property in columns)
+                        {
+                            int index = reader.GetOrdinal(property.Name);
+                            property.SetValue(instance, reader.GetValue(index));
+                        }
+
+                        result.Add(instance);
+                    }
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
             }
 
             return result;
+        }
+
+        public List<T> GetAll<T>()
+        {
+            string query = String.Format("select * from {0}",typeof(T).Name);
+
+            return Execute<T>(query);
+        }
+
+        public List<T> GetByName<T>(string name)
+        {
+            PropertyInfo property = typeof(T).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(Name))).FirstOrDefault();
+
+            string query = String.Format("select * from {0} where {1} = '{2}'", typeof(T).Name, property.Name, name);
+
+            return Execute<T>(query);
         }
     }
 }
