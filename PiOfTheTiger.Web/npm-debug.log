@@ -1,0 +1,244 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'update',
+1 verbose cli   'jade' ]
+2 info using npm@1.2.18
+3 info using node@v0.10.4
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\package.json
+6 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\package.json
+7 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\jade\package.json
+8 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\moment\package.json
+9 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\mysql\package.json
+10 warn package.json WebMatrixExpressSite@0.1.0 No README.md file found!
+11 warn package.json jade@0.22.0 No README.md file found!
+12 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\package.json
+13 verbose cache add [ 'jade', '>= 0.0.1' ]
+14 verbose cache add name="jade" spec=">= 0.0.1" args=["jade",">= 0.0.1"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: '%3E=%200.0.1',
+15 verbose parsed url   path: '%3E=%200.0.1',
+15 verbose parsed url   href: '%3E=%200.0.1' }
+16 verbose addNamed [ 'jade', '>= 0.0.1' ]
+17 verbose addNamed [ null, '>=0.0.1' ]
+18 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\connect\package.json
+19 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\mime\package.json
+20 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\mkdirp\package.json
+21 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\qs\package.json
+22 silly lockFile 15f6ebf8-jade-0-0-1 jade@>= 0.0.1
+23 verbose lock jade@>= 0.0.1 C:\Users\Mishu\AppData\Roaming\npm-cache\15f6ebf8-jade-0-0-1.lock
+24 silly addNameRange { name: 'jade', range: '>=0.0.1', hasData: false }
+25 warn package.json connect@1.8.6 No README.md file found!
+26 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\connect\package.json
+27 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\mime\package.json
+28 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\qs\package.json
+29 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\mkdirp\package.json
+30 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\connect\node_modules\formidable\package.json
+31 verbose url raw jade
+32 verbose url resolving [ 'https://registry.npmjs.org/', './jade' ]
+33 verbose url resolved https://registry.npmjs.org/jade
+34 info trying registry request attempt 1 at 15:00:19
+35 verbose etag "444Z1H4H6G5LHIRFK5SCOWV8"
+36 http GET https://registry.npmjs.org/jade
+37 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\connect\node_modules\qs\package.json
+38 verbose read json C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\connect\node_modules\mime\package.json
+39 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\node_modules\connect\node_modules\formidable\package.json
+40 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+41 info trying registry request attempt 2 at 15:00:41
+42 verbose etag "444Z1H4H6G5LHIRFK5SCOWV8"
+43 http GET https://registry.npmjs.org/jade
+44 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+45 info trying registry request attempt 3 at 15:01:53
+46 verbose etag "444Z1H4H6G5LHIRFK5SCOWV8"
+47 http GET https://registry.npmjs.org/jade
+48 silly registry.get cb [ 304, undefined ]
+49 verbose etag jade from cache
+50 silly addNameRange number 2 { name: 'jade', range: '>=0.0.1', hasData: true }
+51 silly addNameRange versions [ 'jade',
+51 silly addNameRange   [ '0.0.1',
+51 silly addNameRange     '0.0.2',
+51 silly addNameRange     '0.1.0',
+51 silly addNameRange     '0.2.0',
+51 silly addNameRange     '0.2.1',
+51 silly addNameRange     '0.2.2',
+51 silly addNameRange     '0.2.3',
+51 silly addNameRange     '0.2.4',
+51 silly addNameRange     '0.3.0',
+51 silly addNameRange     '0.4.0',
+51 silly addNameRange     '0.4.1',
+51 silly addNameRange     '0.5.0',
+51 silly addNameRange     '0.5.1',
+51 silly addNameRange     '0.5.2',
+51 silly addNameRange     '0.5.3',
+51 silly addNameRange     '0.5.4',
+51 silly addNameRange     '0.5.5',
+51 silly addNameRange     '0.5.6',
+51 silly addNameRange     '0.5.7',
+51 silly addNameRange     '0.6.0',
+51 silly addNameRange     '0.6.1',
+51 silly addNameRange     '0.6.3',
+51 silly addNameRange     '0.7.0',
+51 silly addNameRange     '0.7.1',
+51 silly addNameRange     '0.8.0',
+51 silly addNameRange     '0.8.1',
+51 silly addNameRange     '0.8.2',
+51 silly addNameRange     '0.8.3',
+51 silly addNameRange     '0.8.4',
+51 silly addNameRange     '0.8.5',
+51 silly addNameRange     '0.8.6',
+51 silly addNameRange     '0.8.7',
+51 silly addNameRange     '0.8.8',
+51 silly addNameRange     '0.8.9',
+51 silly addNameRange     '0.9.0',
+51 silly addNameRange     '0.9.1',
+51 silly addNameRange     '0.9.2',
+51 silly addNameRange     '0.9.3',
+51 silly addNameRange     '0.10.0',
+51 silly addNameRange     '0.10.1',
+51 silly addNameRange     '0.10.2',
+51 silly addNameRange     '0.10.3',
+51 silly addNameRange     '0.10.4',
+51 silly addNameRange     '0.10.5',
+51 silly addNameRange     '0.10.6',
+51 silly addNameRange     '0.10.7',
+51 silly addNameRange     '0.11.0',
+51 silly addNameRange     '0.11.1',
+51 silly addNameRange     '0.12.0',
+51 silly addNameRange     '0.12.1',
+51 silly addNameRange     '0.12.2',
+51 silly addNameRange     '0.12.3',
+51 silly addNameRange     '0.12.4',
+51 silly addNameRange     '0.13.0',
+51 silly addNameRange     '0.14.0',
+51 silly addNameRange     '0.14.1',
+51 silly addNameRange     '0.14.2',
+51 silly addNameRange     '0.15.0',
+51 silly addNameRange     '0.15.1',
+51 silly addNameRange     '0.15.2',
+51 silly addNameRange     '0.15.3',
+51 silly addNameRange     '0.15.4',
+51 silly addNameRange     '0.16.0',
+51 silly addNameRange     '0.16.1',
+51 silly addNameRange     '0.16.2',
+51 silly addNameRange     '0.16.3',
+51 silly addNameRange     '0.16.4',
+51 silly addNameRange     '0.17.0',
+51 silly addNameRange     '0.18.0',
+51 silly addNameRange     '0.19.0',
+51 silly addNameRange     '0.20.0',
+51 silly addNameRange     '0.20.1',
+51 silly addNameRange     '0.20.2',
+51 silly addNameRange     '0.20.3',
+51 silly addNameRange     '0.21.0',
+51 silly addNameRange     '0.22.0',
+51 silly addNameRange     '0.22.1',
+51 silly addNameRange     '0.23.0',
+51 silly addNameRange     '0.24.0',
+51 silly addNameRange     '0.25.0',
+51 silly addNameRange     '0.26.0',
+51 silly addNameRange     '0.26.1',
+51 silly addNameRange     '0.26.2',
+51 silly addNameRange     '0.26.3',
+51 silly addNameRange     '0.27.0',
+51 silly addNameRange     '0.27.1',
+51 silly addNameRange     '0.27.2',
+51 silly addNameRange     '0.27.3',
+51 silly addNameRange     '0.27.4',
+51 silly addNameRange     '0.27.5',
+51 silly addNameRange     '0.27.6',
+51 silly addNameRange     '0.27.7',
+51 silly addNameRange     '0.28.0',
+51 silly addNameRange     '0.28.1',
+51 silly addNameRange     '0.28.2',
+51 silly addNameRange     '0.29.0' ] ]
+52 verbose addNamed [ 'jade', '0.29.0' ]
+53 verbose addNamed [ '0.29.0', '0.29.0' ]
+54 silly lockFile 1b0176e1-jade-0-29-0 jade@0.29.0
+55 verbose lock jade@0.29.0 C:\Users\Mishu\AppData\Roaming\npm-cache\1b0176e1-jade-0-29-0.lock
+56 verbose read json C:\Users\Mishu\AppData\Roaming\npm-cache\jade\0.29.0\package\package.json
+57 silly lockFile 1b0176e1-jade-0-29-0 jade@0.29.0
+58 silly lockFile 1b0176e1-jade-0-29-0 jade@0.29.0
+59 silly lockFile 15f6ebf8-jade-0-0-1 jade@>= 0.0.1
+60 silly lockFile 15f6ebf8-jade-0-0-1 jade@>= 0.0.1
+61 info outdated updating [ [ 'C:\\Users\\Mishu\\Documents\\GitHub\\Shiretii\\PiOfTheTiger.Web',
+61 info outdated     'jade',
+61 info outdated     '0.22.0',
+61 info outdated     '0.29.0' ] ]
+62 verbose install where,what [ 'C:\\Users\\Mishu\\Documents\\GitHub\\Shiretii\\PiOfTheTiger.Web',
+62 verbose install   [ 'jade@0.29.0' ] ]
+63 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\package.json
+64 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\express\package.json
+65 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\jade\package.json
+66 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\moment\package.json
+67 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\node_modules\mysql\package.json
+68 verbose from cache C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web\package.json
+69 verbose readDependencies using package.json deps
+70 verbose cache add [ 'jade@0.29.0', null ]
+71 verbose cache add name=undefined spec="jade@0.29.0" args=["jade@0.29.0",null]
+72 verbose parsed url { protocol: null,
+72 verbose parsed url   slashes: null,
+72 verbose parsed url   auth: null,
+72 verbose parsed url   host: null,
+72 verbose parsed url   port: null,
+72 verbose parsed url   hostname: null,
+72 verbose parsed url   hash: null,
+72 verbose parsed url   search: null,
+72 verbose parsed url   query: null,
+72 verbose parsed url   pathname: 'jade@0.29.0',
+72 verbose parsed url   path: 'jade@0.29.0',
+72 verbose parsed url   href: 'jade@0.29.0' }
+73 verbose cache add name="jade" spec="0.29.0" args=["jade","0.29.0"]
+74 verbose parsed url { protocol: null,
+74 verbose parsed url   slashes: null,
+74 verbose parsed url   auth: null,
+74 verbose parsed url   host: null,
+74 verbose parsed url   port: null,
+74 verbose parsed url   hostname: null,
+74 verbose parsed url   hash: null,
+74 verbose parsed url   search: null,
+74 verbose parsed url   query: null,
+74 verbose parsed url   pathname: '0.29.0',
+74 verbose parsed url   path: '0.29.0',
+74 verbose parsed url   href: '0.29.0' }
+75 verbose addNamed [ 'jade', '0.29.0' ]
+76 verbose addNamed [ '0.29.0', '0.29.0' ]
+77 silly lockFile 1b0176e1-jade-0-29-0 jade@0.29.0
+78 verbose lock jade@0.29.0 C:\Users\Mishu\AppData\Roaming\npm-cache\1b0176e1-jade-0-29-0.lock
+79 verbose url raw jade/0.29.0
+80 verbose url resolving [ 'https://registry.npmjs.org/', './jade/0.29.0' ]
+81 verbose url resolved https://registry.npmjs.org/jade/0.29.0
+82 info trying registry request attempt 1 at 15:02:16
+83 http GET https://registry.npmjs.org/jade/0.29.0
+84 info retry will retry, error on last attempt: Error: read ECONNRESET
+85 info trying registry request attempt 2 at 15:04:22
+86 http GET https://registry.npmjs.org/jade/0.29.0
+87 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+88 info trying registry request attempt 3 at 15:05:22
+89 http GET https://registry.npmjs.org/jade/0.29.0
+90 silly lockFile 1b0176e1-jade-0-29-0 jade@0.29.0
+91 silly lockFile 1b0176e1-jade-0-29-0 jade@0.29.0
+92 error Error: read ECONNRESET
+92 error     at errnoException (net.js:883:11)
+92 error     at TCP.onread (net.js:539:19)
+93 error If you need help, you may report this log at:
+93 error     <http://github.com/isaacs/npm/issues>
+93 error or email it to:
+93 error     <npm-@googlegroups.com>
+94 error System Windows_NT 6.2.9200
+95 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "update" "jade"
+96 error cwd C:\Users\Mishu\Documents\GitHub\Shiretii\PiOfTheTiger.Web
+97 error node -v v0.10.4
+98 error npm -v 1.2.18
+99 error syscall read
+100 error code ECONNRESET
+101 error errno ECONNRESET
+102 verbose exit [ 1, true ]

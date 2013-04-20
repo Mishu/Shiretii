@@ -6,3 +6,54 @@ body {
 a {
   color: #00B7FF;
 }
+
+#CarouselContainer {
+    width: 500px;
+}
+
+#indexCarousel .carousel-caption {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  color: #fff;
+}
+#topHeaderInfo {    
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    background: url('/img/homeTopbg.jpg') repeat-x top;
+    color: #fff;
+}
+
+#topHeaderInfo img{
+    width: 256px;
+    height: 256px;
+    margin-top: -65px;
+}
+
+#footer {
+    background:  rgb(33, 33, 33);
+    color: #fff;    
+    width: 100%;
+    
+}
+
+/*hr styles*/
+hr {
+	margin: 20px 0px; border: currentColor; height: 2px; position: relative;
+}
+hr::before {
+	left: 0px; top: 50%; width: 100%; height: 1px; position: absolute; content: "";
+}
+hr::after {
+	left: 0px; top: 50%; width: 100%; height: 1px; position: absolute; content: "";
+}
+hr::before {
+	background: linear-gradient(to right, rgba(225, 225, 225, 0) 0%, rgba(225, 225, 225, 1) 10%, rgba(225, 225, 225, 1) 90%, rgba(225, 225, 225, 0) 100%); margin-top: -1px;
+}
+hr::after {
+	background: linear-gradient(to right, rgba(245, 245, 245, 0) 0%, rgba(245, 245, 245, 1) 10%, rgba(245, 245, 245, 1) 90%, rgba(245, 245, 245, 0) 100%);
+}
+hr.clean {
+	border-width: 1px 0px; border-style: solid none; border-color: transparent currentColor; margin: 15px 0px;
+}

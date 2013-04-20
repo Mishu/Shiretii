@@ -1,2 +1,24 @@
-h1= title
-p Welcome to #{title}
+extends layout
+
+block content         
+    #topHeaderInfo.row-fluid
+        h1 Your house just got better!
+        .span5        
+            p Now you can monitor your house from anywhere in the world using your mobile device, laptop or PC.
+            p Didn't you ever wanted to take a quick peek at your house when you're on a vacation or at the office? 
+            p Now you can do this without asking a friend or a neighbour.
+        img.span3.pull-right(src='/img/imgLogoHouse.png')
+    #mainContentDiv.container
+        hr
+        .row-fluid
+            .span4.box
+                h2 Home surveillance
+                p You get instant notification when a change is detected from your webcam.
+                p You can then act accordinglly. The pictures are saved so you can use them to identify the problem.
+            .span4.box
+                h2 Home gas leakeage
+                p You get instant notification when a gas leak is detected from one of our sensors deployed in your home.
+            .span4.box
+                h2 Turn on your pc from anyware
+                p Did you ever forget some important file on your home pc and you left it shutdown?
+                p Using this produc you can turn on your PC and get notified when it is available to connect remotely.
