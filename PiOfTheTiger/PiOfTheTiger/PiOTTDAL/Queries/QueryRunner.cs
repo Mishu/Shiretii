@@ -15,12 +15,20 @@ namespace PiOTTDAL.Queryes
         private string connectionString;
         private MySqlConnection connection;
 
+        /// <summary>
+        /// The constructor gets the database connection string
+        /// </summary>
         public QueryRunner()
         {
             connectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             connection = new MySqlConnection(connectionString);
         }
 
+        /// <summary>
+        /// Receives a type and a query and returns a collection of
+        /// objects of the specified type, that are retrieved from
+        /// the database, using the given query.
+        /// </summary>
         public List<T> Execute<T>(string query)
         {
             List<T> result = new List<T>();
@@ -59,6 +67,11 @@ namespace PiOTTDAL.Queryes
             return result;
         }
 
+        /// <summary>
+        /// Receives a type and returns a collection with
+        /// all the objects of the specified type, found
+        /// in the database
+        /// </summary>
         public List<T> GetAll<T>()
         {
             string query = String.Format("select * from {0}",typeof(T).Name);
@@ -66,6 +79,12 @@ namespace PiOTTDAL.Queryes
             return Execute<T>(query);
         }
 
+        /// <summary>
+        /// Receives a type and returns a collection with
+        /// all the objects of the specified type, found
+        /// in the database, filtered by the column that
+        /// has the specified attribute.
+        /// </summary>
         public List<T> GetByAttribute<T>(string name, Type attributeType)
         {
             string typeName = typeof(T).Name;
