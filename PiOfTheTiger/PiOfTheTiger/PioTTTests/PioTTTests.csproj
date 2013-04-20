@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="EmailUtils\EmailSenderTest.cs" />
+    <Compile Include="PiOTTDAL\QueryRunnerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +63,9 @@
       <Project>{96880053-b77e-4366-aa13-4ca9cabcc52e}</Project>
       <Name>PiOTTDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
