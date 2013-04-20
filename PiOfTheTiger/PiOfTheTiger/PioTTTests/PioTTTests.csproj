@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -53,12 +54,18 @@
     <Compile Include="EmailUtils\EmailSenderTest.cs" />
     <Compile Include="PiOTTDAL\AddressBookQueryTest.cs" />
     <Compile Include="PiOTTDAL\EmailSettingsQueryTest.cs" />
+    <Compile Include="PictureUtils\ImageComparerTest.cs" />
+    <Compile Include="PiOTTDAL\QueryRunnerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EmailUtils\EmailUtils.csproj">
       <Project>{19cf15c2-7d7b-4833-8954-397097bde48a}</Project>
       <Name>EmailUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PictureUtils\PictureUtils.csproj">
+      <Project>{2e3f9fcf-217d-474f-b617-e9927cc30924}</Project>
+      <Name>PictureUtils</Name>
     </ProjectReference>
     <ProjectReference Include="..\PiOTTDAL\PiOTTDAL.csproj">
       <Project>{96880053-b77e-4366-aa13-4ca9cabcc52e}</Project>
