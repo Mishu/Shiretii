@@ -1,6 +1,62 @@
-!!!
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+!!! 5
+html(lang='en') 
+    head 
+        title= title
+        
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')       
+        style
+            body {
+                padding-top:40px; /* 60px to make the container go all the way to the bottom of the top bar */                         
+            }
+        link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
+        script(src="/js/jquery-1.9.1.min.js")
+        script(src="/js/bootstrap.min.js")                         
+        block header
+    body
+        div.navbar.navbar-fixed-top
+          div.navbar-inner
+           div.container
+              a.btn.btn-navbar(data-target='.nav-collapse',data-toggle='collapse')
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+              a(href='/').brand #{title}
+              div.nav-collapse
+                ul.nav
+                  li
+                    a(href='/MyHouse') My House
+                  li
+                    a(href='/Settings') Settings
+                  li
+                    a(href='/About') About
+              .nav-collapse
+                ul.nav.pull-right
+                    li
+                        a(href='/Register') Register
+                    li
+                        a(href='/Login') Login
+    #wrap        
+        #main.container.clear-top
+            block content
+            
+    #footer
+        .container
+            .row-fluid
+                .span4
+                    h4 Dev team
+                    ul
+                        li Mihai Stancescu
+                        li Robert Stefanescu
+                        li Bogdan Ghinea                        
+                    p &copy; hackathon.ro 2013
+                .span4
+                    h4 More information
+                    p You can contact us for more info about this product.
+                .span4
+                    h4 Get in touch!
+                    p You can reach us at 
+                        a(href='mailto:a@a.com') e-mail                        
+                    | address
+                                           
+    block scripts
