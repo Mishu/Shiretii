@@ -1,4 +1,5 @@
 ﻿using PiOTTDAL.Entities;
+using PiOTTDAL.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace EmailUtils
             SmtpClient smtpClient = InitializeSmtpClient();
 
             smtpClient.Send(email);
+
+            new SentEmailQuery().InsertSentEmail(email);
         }
 
         private SmtpClient InitializeSmtpClient()

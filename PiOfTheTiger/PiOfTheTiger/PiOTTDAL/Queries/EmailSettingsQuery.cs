@@ -1,5 +1,6 @@
 ﻿using PiOTTDAL.Constants;
 using PiOTTDAL.Entities;
+using PiOTTDAL.Entities.Attributes;
 using PiOTTDAL.Queries.Base;
 using System;
 using System.Collections.Generic;

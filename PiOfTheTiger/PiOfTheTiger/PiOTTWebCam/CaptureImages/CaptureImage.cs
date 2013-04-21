@@ -17,7 +17,7 @@ namespace PiOTTWebCam.CaptureImages
         {
             int jpegCompressionRate = 20;
             string saveToPath = GetImageSavePath(camera);
-
+            Console.WriteLine(saveToPath);
             cameras.Get(camera.CameraName).SavePicture(new PictureSize(camera.PictureWidth, camera.PictureHeight), saveToPath, jpegCompressionRate);
         }
 
@@ -25,7 +25,7 @@ namespace PiOTTWebCam.CaptureImages
         {
             DateTime currentDateTime = DateTime.Now;
             string folder = new AppSettingsQuery().GetAppSettingByKey(QueryConstants.AppSettingsKey_PicturesSavePath);
-            folder = String.Format(@"{0}\{1}\", folder, camera.CameraName);
+            folder = String.Format(@"{0}/{1}/", folder, camera.CameraName);
 
             if (!Directory.Exists(folder))
                 Directory.CreateDirectory(folder);

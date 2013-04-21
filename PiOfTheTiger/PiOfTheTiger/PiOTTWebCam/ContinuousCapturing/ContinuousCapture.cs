@@ -58,9 +58,9 @@ namespace PiOTTWebCam.ContinuousCapturing
         private void InitializeCameras()
         {
             availableCameras = new CameraQuery().GetAllCamera();
-            camManager = new CamManager();
-            camBuilder = new CamManagerBuilder(camManager);
-            foreach (Camera camera in availableCameras)
+            camBuilder = Cameras.DeclareDevice().Named(availableCameras[0].CameraName).WithDevicePath(availableCameras[0].Path);
+
+            foreach (Camera camera in availableCameras.Skip(1))
             {
                 camBuilder.AndDevice().Named(camera.CameraName).WithDevicePath(camera.Path);
             }
