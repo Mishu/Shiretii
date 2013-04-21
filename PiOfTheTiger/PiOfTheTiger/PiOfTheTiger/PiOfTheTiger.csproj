@@ -48,6 +48,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EmailUtils\EmailUtils.csproj">
+      <Project>{19cf15c2-7d7b-4833-8954-397097bde48a}</Project>
+      <Name>EmailUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PictureUtils\PictureUtils.csproj">
+      <Project>{2e3f9fcf-217d-474f-b617-e9927cc30924}</Project>
+      <Name>PictureUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PiOTTCommon\PiOTTCommon.csproj">
+      <Project>{05b5791f-10e2-4380-ad2e-2ebe42e8c93c}</Project>
+      <Name>PiOTTCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PiOTTDAL\PiOTTDAL.csproj">
+      <Project>{96880053-b77e-4366-aa13-4ca9cabcc52e}</Project>
+      <Name>PiOTTDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PiOTTWebCam\PiOTTWebCam.csproj">
       <Project>{7151366b-ad38-48ca-aa59-e946ad04568c}</Project>
       <Name>PiOTTWebCam</Name>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PiOTTDAL.Entities.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace PiOTTDAL.Entities
 {
     public class Camera
     {
+        [ID]
         public int IdCamera { get; set; }
 
         [Name]
