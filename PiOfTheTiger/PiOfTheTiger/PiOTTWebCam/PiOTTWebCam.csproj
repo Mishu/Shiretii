@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EmailUtils\EmailUtils.csproj">
+      <Project>{19cf15c2-7d7b-4833-8954-397097bde48a}</Project>
+      <Name>EmailUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PictureUtils\PictureUtils.csproj">
+      <Project>{2e3f9fcf-217d-474f-b617-e9927cc30924}</Project>
+      <Name>PictureUtils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PiOTTDAL\PiOTTDAL.csproj">
       <Project>{96880053-b77e-4366-aa13-4ca9cabcc52e}</Project>
       <Name>PiOTTDAL</Name>
