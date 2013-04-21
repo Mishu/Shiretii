@@ -56,7 +56,7 @@ namespace PictureUtils
         /// <param name="pathImage2">Path to second image.</param>
         /// <param name="tolerance">Sensitivity.</param>
         /// <returns>True if the images are the same.</returns>
-        public static Nullable<Bitmap> Compare(string pathImage1, string pathImage2)
+        public static Bitmap Compare(string pathImage1, string pathImage2)
         {
             Bitmap image1 = new Bitmap(pathImage1);
             Bitmap image2 = new Bitmap(pathImage2);
@@ -71,7 +71,7 @@ namespace PictureUtils
         /// <param name="pathImage2">Second image.</param>
         /// <param name="tolerance">Sensitivity.</param>
         /// <returns>True if the images are the same.</returns>
-        public static Nullable<Bitmap> Compare(Bitmap image1, Bitmap image2)
+        public static Bitmap Compare(Bitmap image1, Bitmap image2)
         {
             // if the images are not of the same size then throw exception
             if (image1.Height != image2.Height || image1.Width != image2.Width)

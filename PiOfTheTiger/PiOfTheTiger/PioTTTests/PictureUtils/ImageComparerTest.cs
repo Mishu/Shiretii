@@ -2,8 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PictureUtils;
 using System.Drawing;
-using AForge.Imaging;
-using AForge.Imaging.Filters;
 
 namespace PioTTTests.PictureUtils
 {

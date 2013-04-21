@@ -31,12 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <HintPath>C:\Users\Florin\Desktop\references\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Imaging">
-      <HintPath>C:\Users\Florin\Desktop\references\AForge.Imaging.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -48,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageComparer.cs" />
-    <Compile Include="MotionDetector.cs" />
     <Compile Include="ParralelImageComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

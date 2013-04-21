@@ -42,6 +42,8 @@ namespace PiOTTWebCam.ContinuousCapturing
             foreach(Camera cam in availableCameras)
             {
                 new CaptureImage().TakePicture(cam, cameras);
+
+
             }
 
             string interval = new AppSettingsQuery().GetAppSettingByKey(QueryConstants.AppSettingsKey_PicturesSaveInterval);
