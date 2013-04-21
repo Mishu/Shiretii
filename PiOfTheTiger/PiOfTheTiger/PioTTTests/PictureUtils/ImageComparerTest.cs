@@ -2,32 +2,44 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PictureUtils;
 using System.Drawing;
+using System.IO;
 
 namespace PioTTTests.PictureUtils
 {
     [TestClass]
     public class ImageComparerTest
     {
-        //[TestMethod]
-        //public void CompareSameImages()
-        //{
-        //    string pathImage1 = @"C:\Users\Florin\Desktop\color tests\r50g0b0.png";
-        //    string pathImage2 = @"C:\Users\Florin\Desktop\color tests\r60g0b0.png";
+        [TestMethod]
+        public void CompareSameImages()
+        {
+            string pathImage1 = @".\PictureUtils\Pictures\picture001.jpg";
+            string pathImage2 = @".\PictureUtils\Pictures\picture001.jpg";
 
-        //    bool actual = ImageComparer.Compare(pathImage1, pathImage2);
+            bool actual = ImageComparer.Compare(Path.GetFullPath(pathImage1), Path.GetFullPath(pathImage2));
 
-        //    Assert.AreEqual(true, actual);
-        //}
+            Assert.AreEqual(true, actual);
+        }
 
-        //[TestMethod]
-        //public void CompareDifferentImages()
-        //{
-        //    string pathImage1 = @"C:\Users\Florin\Desktop\image1.png";
-        //    string pathImage2 = @"C:\Users\Florin\Desktop\image2.png";
+        [TestMethod]
+        public void CompareDifferentImagesMoreDifferences()
+        {
+            string pathImage1 = @".\PictureUtils\Pictures\picture001.jpg";
+            string pathImage2 = @".\PictureUtils\Pictures\picture002.jpg";
 
-        //    bool actual = ImageComparer.Compare(pathImage1, pathImage2);
+            bool actual = ImageComparer.Compare(Path.GetFullPath(pathImage1), Path.GetFullPath(pathImage2));
 
-        //    Assert.AreEqual(false, actual);
-        //}
+            Assert.AreEqual(false, actual);
+        }
+
+        [TestMethod]
+        public void CompareDifferentImagesLessDifferences()
+        {
+            string pathImage1 = @".\PictureUtils\Pictures\picture002.jpg";
+            string pathImage2 = @".\PictureUtils\Pictures\picture003.jpg";
+
+            bool actual = ImageComparer.Compare(pathImage1, pathImage2);
+
+            Assert.AreEqual(true, actual);
+        }
     }
 }
