@@ -56,7 +56,7 @@ namespace PictureUtils
         /// <param name="pathImage2">Path to second image.</param>
         /// <param name="tolerance">Sensitivity.</param>
         /// <returns>True if the images are the same.</returns>
-        public static bool Compare(string pathImage1, string pathImage2)
+        public static Nullable<Bitmap> Compare(string pathImage1, string pathImage2)
         {
             Bitmap image1 = new Bitmap(pathImage1);
             Bitmap image2 = new Bitmap(pathImage2);
@@ -71,11 +71,13 @@ namespace PictureUtils
         /// <param name="pathImage2">Second image.</param>
         /// <param name="tolerance">Sensitivity.</param>
         /// <returns>True if the images are the same.</returns>
-        public static bool Compare(Bitmap image1, Bitmap image2)
+        public static Nullable<Bitmap> Compare(Bitmap image1, Bitmap image2)
         {
             // if the images are not of the same size then throw exception
             if (image1.Height != image2.Height || image1.Width != image2.Width)
                 throw new Exception("Mismatch image size"); //TODO: replace with custom exception
+
+            Bitmap resultImage = new Bitmap(image1.Width, image1.Height);
 
             // declare and init the pixels with transparent
             Color image1PixelColor = Color.Transparent;
@@ -87,7 +89,6 @@ namespace PictureUtils
             // reinit the number of different pixels between the images
             _differentPixels = 0;
 
-
             for (int xPixel = 0; xPixel < image1.Width; xPixel++)
             {
                 for (int yPixel = 0; yPixel < image1.Height; yPixel++)
@@ -98,14 +99,15 @@ namespace PictureUtils
                     if (ArePixelsDifferent(image1PixelColor, image2PixelColor))
                     {
                         _differentPixels++;
+                        resultImage.SetPixel(xPixel, yPixel, Color.Red);
                     }
                 }
-
-                if (IsToleranceExceeded && xPixel % 10 == 0)
-                    return false;
             }
 
-            return true;
+            if (IsToleranceExceeded)
+                return resultImage;
+            else
+                return null;
         }
 
         private static bool ArePixelsDifferent(Color image1PixelColor, Color image2PixelColor)
@@ -128,5 +130,7 @@ namespace PictureUtils
                 return diff / (pixelColor1 + pixelColor2) > ColorTolerance;
             }
         }
+
+
     }
 }
