@@ -43,6 +43,11 @@ namespace PiOTTWebCam.ContinuousCapturing
             timer.Elapsed += timer_Elapsed;
         }
 
+        /// <summary>
+        /// The method fired when the timer interval elapses
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             timer.Stop();
@@ -56,16 +61,16 @@ namespace PiOTTWebCam.ContinuousCapturing
             string interval = new AppSettingsQuery().GetAppSettingByKey(QueryConstants.AppSettingsKey_PicturesSaveInterval);
             Double actualInterval = Double.Parse(interval);
 
-            if (actualInterval != timer.Interval)
-            {
-                //timer.Stop();
-                timer.Interval = actualInterval;
-                //timer.Start();
-            }
+            timer.Interval = actualInterval;
 
             timer.Start();
         }
 
+        /// <summary>
+        /// Calls the method to compare the pictures and if differences found
+        /// sends a mail to the defined address book.
+        /// </summary>
+        /// <param name="cam"></param>
         private void CompareTakenPictures(Camera cam)
         {
             string path = Path.Combine(picturesFolder, cam.CameraName);
@@ -100,15 +105,14 @@ namespace PiOTTWebCam.ContinuousCapturing
             }
         }
 
+        /// <summary>
+        /// Initializes the cameras from the database.
+        /// </summary>
         private void InitializeCameras()
         {
             availableCameras = new CameraQuery().GetAllCamera();
             camBuilder = Cameras.DeclareDevice().Named(availableCameras[1].CameraName).WithDevicePath(availableCameras[1].Path)
                 .AndDevice().Named(availableCameras[0].CameraName).WithDevicePath(availableCameras[0].Path);
-            //for (int camIndex = 1; camIndex < availableCameras.Count; camIndex++)
-            //{
-            //    camBuilder.AndDevice().Named(availableCameras[camIndex].CameraName).WithDevicePath(availableCameras[camIndex].Path);
-            //}
 
             cameras = camBuilder.Memorize();
         }

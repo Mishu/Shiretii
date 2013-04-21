@@ -13,13 +13,27 @@ namespace PiOTTWebCam.CaptureImages
 {
     public class CaptureImage
     {
+        /// <summary>
+        /// Takes the picture from the given camera
+        /// </summary>
+        /// <param name="camera"></param>
+        /// <param name="cameras"></param>
         public void TakePicture(Camera camera, Cameras cameras)
         {
             int jpegCompressionRate = 20;
             string saveToPath = GetImageSavePath(camera);
-            cameras.Get(camera.CameraName).SavePicture(new PictureSize(camera.PictureWidth, camera.PictureHeight), saveToPath, jpegCompressionRate);
+            cameras.Get(camera.CameraName)
+                .SavePicture(new PictureSize(camera.PictureWidth
+                            , camera.PictureHeight)
+                            , saveToPath
+                            , jpegCompressionRate);
         }
 
+        /// <summary>
+        /// Gets the path and file name where to save the picture
+        /// </summary>
+        /// <param name="camera"></param>
+        /// <returns></returns>
         private string GetImageSavePath(Camera camera)
         {
             DateTime currentDateTime = DateTime.Now;

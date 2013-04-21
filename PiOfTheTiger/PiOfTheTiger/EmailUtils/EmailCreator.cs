@@ -11,6 +11,10 @@ namespace EmailUtils
 {
     public class EmailCreator
     {
+        /// <summary>
+        /// Sends email with picture attachment
+        /// </summary>
+        /// <param name="imagePath">Path to the image on the disk</param>
         public void SendMailForDifferentImages(string imagePath)
         {
             EmailSettings emailSettings = new EmailSettingsQuery().GetEmailSettings();
@@ -35,7 +39,7 @@ namespace EmailUtils
 
             mailMessage.CC.Add(mailFrom);
 
-            //mailMessage.Attachments.Add(new Attachment(imagePath));
+            mailMessage.Attachments.Add(new Attachment(imagePath));
 
             new EmailSender(emailSettings).SendTheMail(mailMessage);
         }

@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImageComparer.cs" />
-    <Compile Include="ParralelImageComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +51,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PiOTTCommon\PiOTTCommon.csproj">
+      <Project>{05b5791f-10e2-4380-ad2e-2ebe42e8c93c}</Project>
+      <Name>PiOTTCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PiOTTDAL\PiOTTDAL.csproj">
       <Project>{96880053-b77e-4366-aa13-4ca9cabcc52e}</Project>
       <Name>PiOTTDAL</Name>

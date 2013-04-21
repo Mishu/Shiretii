@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using PiOTTDAL.Queries;
 using PiOTTDAL.Constants;
+using PiOTTCommon.CustomExceptions;
 
 namespace PictureUtils
 {
@@ -33,14 +34,6 @@ namespace PictureUtils
             }
         }
 
-        private static decimal ColorTolerance
-        {
-            get
-            {
-                return PixelCountTolerance / 10M;
-            }
-        }
-
         private static bool IsToleranceExceeded
         {
             get
@@ -48,8 +41,6 @@ namespace PictureUtils
                 return PercentDifferent >= PixelCountTolerance;
             }
         }
-
-
 
         /// <summary>
         /// Compares two images and returns true if they are the same.
@@ -77,16 +68,13 @@ namespace PictureUtils
         {
             // if the images are not of the same size then throw exception
             if (image1.Height != image2.Height || image1.Width != image2.Width)
-                throw new Exception("Mismatch image size"); //TODO: replace with custom exception
+                throw new ImageSizeMismatchException();
 
-            // declare and init the pixels with transparent
             Color image1PixelColor = Color.Transparent;
             Color image2PixelColor = Color.Transparent;
 
-            // get total pixels of the first image
             _totalPixels = image1.Width * image1.Height;
 
-            // reinit the number of different pixels between the images
             _differentPixels = 0;
 
             for (int xPixel = 0; xPixel < image1.Width; xPixel += 3)
@@ -108,28 +96,5 @@ namespace PictureUtils
 
             return true;
         }
-
-        private static bool ArePixelsDifferent(Color image1PixelColor, Color image2PixelColor)
-        {
-            return AreColorsDifferent(image1PixelColor.R, image2PixelColor.R)
-                    || AreColorsDifferent(image1PixelColor.G, image2PixelColor.G)
-                    || AreColorsDifferent(image1PixelColor.B, image2PixelColor.B);
-        }
-
-        private static bool AreColorsDifferent(byte pixelColor1, byte pixelColor2)
-        {
-            decimal diff = Math.Abs(pixelColor1 - pixelColor2);
-
-            if (pixelColor1 * pixelColor2 == 0)
-            {
-                return diff < (ColorTolerance);
-            }
-            else
-            {
-                return diff / (pixelColor1 + pixelColor2) > ColorTolerance;
-            }
-        }
-
-
     }
 }

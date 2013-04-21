@@ -26,6 +26,10 @@ namespace EmailUtils
             this.emailSettings = emailSettings;
         }
 
+        /// <summary>
+        /// Sends email using a SMTPClient
+        /// </summary>
+        /// <param name="email"></param>
         public void SendTheMail(MailMessage email)
         {
             SmtpClient smtpClient = InitializeSmtpClient();
@@ -34,14 +38,7 @@ namespace EmailUtils
             delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
             { return true; };
 
-            try
-            {
-                smtpClient.Send(email);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            smtpClient.Send(email);
 
             new SentEmailQuery().InsertSentEmail(email);
         }
