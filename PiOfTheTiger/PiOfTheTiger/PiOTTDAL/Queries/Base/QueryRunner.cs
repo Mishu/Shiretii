@@ -123,23 +123,23 @@ namespace PiOTTDAL.Queries.Base
                 StringBuilder parametersForInsert = new StringBuilder();
                 foreach (PropertyInfo prop in columns)
                 {
-                    columnsForInsert.AppendFormat("{0},", prop.Name);
+                    columnsForInsert.AppendFormat("`{0}` ,", prop.Name);
                     if (Attribute.IsDefined(prop, typeof(ID)))
-                        parametersForInsert.AppendFormat("NULL,", prop.Name);
+                        parametersForInsert.AppendFormat("NULL ,", prop.Name);
                     else
                     {
-                        parametersForInsert.AppendFormat("@{1},", prop.Name);
+                        parametersForInsert.AppendFormat("@{0},", prop.Name);
                         cmd.Parameters.AddWithValue(String.Format("@{0}", prop.Name), prop.GetValue(entity, null));
                     }
                 }
 
                 string columnsInsert = columnsForInsert.ToString();
-                RemoveLastComma(columnsInsert);
+                columnsInsert = RemoveLastComma(columnsInsert);
 
                 string parametersInsert = parametersForInsert.ToString();
-                RemoveLastComma(parametersInsert);
+                parametersInsert = RemoveLastComma(parametersInsert);
 
-                string sqlCommand = String.Format("insert into {0}({1}) values({2})"
+                string sqlCommand = String.Format("insert into `{0}` ({1}) values({2})"
                     ,entityType.Name
                     ,columnsInsert
                     ,parametersInsert);
@@ -157,10 +157,12 @@ namespace PiOTTDAL.Queries.Base
             }
         }
 
-        private void RemoveLastComma(string str)
+        private string RemoveLastComma(string str)
         {
             if (str.EndsWith(","))
                 str = str.Remove(str.Length - 1);
+
+            return str;
         }
     }
 }

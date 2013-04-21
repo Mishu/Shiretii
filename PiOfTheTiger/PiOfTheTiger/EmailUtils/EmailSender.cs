@@ -30,7 +30,7 @@ namespace EmailUtils
 
             smtpClient.Send(email);
 
-            //new SentEmailQuery
+            new SentEmailQuery().InsertSentEmail(email);
         }
 
         private SmtpClient InitializeSmtpClient()
