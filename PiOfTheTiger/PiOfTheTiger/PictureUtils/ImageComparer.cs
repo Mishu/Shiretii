@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using PiOTTDAL.Queries;
+using PiOTTDAL.Constants;
 
 namespace PictureUtils
 {
@@ -27,7 +29,7 @@ namespace PictureUtils
         {
             get
             {
-                return 10M; //TODO: get from db
+                return Convert.ToDecimal(new AppSettingsQuery().GetAppSettingByKey(QueryConstants.AppSettingsKey_PicturesCompareTolerance)); //TODO: get from db
             }
         }
 
@@ -56,7 +58,7 @@ namespace PictureUtils
         /// <param name="pathImage2">Path to second image.</param>
         /// <param name="tolerance">Sensitivity.</param>
         /// <returns>True if the images are the same.</returns>
-        public static Bitmap Compare(string pathImage1, string pathImage2)
+        public static Boolean Compare(string pathImage1, string pathImage2)
         {
             Bitmap image1 = new Bitmap(pathImage1);
             Bitmap image2 = new Bitmap(pathImage2);
@@ -71,13 +73,11 @@ namespace PictureUtils
         /// <param name="pathImage2">Second image.</param>
         /// <param name="tolerance">Sensitivity.</param>
         /// <returns>True if the images are the same.</returns>
-        public static Bitmap Compare(Bitmap image1, Bitmap image2)
+        public static Boolean Compare(Bitmap image1, Bitmap image2)
         {
             // if the images are not of the same size then throw exception
             if (image1.Height != image2.Height || image1.Width != image2.Width)
                 throw new Exception("Mismatch image size"); //TODO: replace with custom exception
-
-            Bitmap resultImage = new Bitmap(image1.Width, image1.Height);
 
             // declare and init the pixels with transparent
             Color image1PixelColor = Color.Transparent;
@@ -89,25 +89,24 @@ namespace PictureUtils
             // reinit the number of different pixels between the images
             _differentPixels = 0;
 
-            for (int xPixel = 0; xPixel < image1.Width; xPixel++)
+            for (int xPixel = 0; xPixel < image1.Width; xPixel += 3)
             {
-                for (int yPixel = 0; yPixel < image1.Height; yPixel++)
+                for (int yPixel = 0; yPixel < image1.Height; yPixel += 2)
                 {
                     image1PixelColor = image1.GetPixel(xPixel, yPixel);
                     image2PixelColor = image2.GetPixel(xPixel, yPixel);
 
-                    if (ArePixelsDifferent(image1PixelColor, image2PixelColor))
+                    if (image1PixelColor != image2PixelColor)
                     {
                         _differentPixels++;
-                        resultImage.SetPixel(xPixel, yPixel, Color.Red);
                     }
                 }
+
+                if (IsToleranceExceeded)
+                    return false;
             }
 
-            if (IsToleranceExceeded)
-                return resultImage;
-            else
-                return null;
+            return true;
         }
 
         private static bool ArePixelsDifferent(Color image1PixelColor, Color image2PixelColor)

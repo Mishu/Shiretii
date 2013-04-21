@@ -45,10 +45,10 @@ namespace PioTTTests.EmailUtils
             EmailSettings emailSettings = new EmailSettings()
             {
                 SMTPPassword = "1234%asd",
-                SMTPPort = 587,
-                SMTPServer = "smtp.gmail.com",
-                SMTPSslRequired = true,
-                SMTPUserName = "PiOTT.Alerts@gmail.com"
+                SMTPPort = 25,
+                SMTPServer = "10.10.0.94",
+                SMTPSslRequired = false,
+                SMTPUserName = "admin"
             };
 
             return emailSettings;

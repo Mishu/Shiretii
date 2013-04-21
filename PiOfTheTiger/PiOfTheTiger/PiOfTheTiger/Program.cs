@@ -12,8 +12,16 @@ namespace PiOfTheTiger
     {
         static void Main(string[] args)
         {
-            ContinuousCapture capturing = new ContinuousCapture();
-            capturing.StartCapturing();
+            try
+            {
+                ContinuousCapture capturing = new ContinuousCapture();
+                capturing.StartCapturing();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
 
             Thread th = new Thread(KeepRunning);
             th.Start();

@@ -17,7 +17,6 @@ namespace PiOTTWebCam.CaptureImages
         {
             int jpegCompressionRate = 20;
             string saveToPath = GetImageSavePath(camera);
-            Console.WriteLine(saveToPath);
             cameras.Get(camera.CameraName).SavePicture(new PictureSize(camera.PictureWidth, camera.PictureHeight), saveToPath, jpegCompressionRate);
         }
 
